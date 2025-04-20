@@ -1,5 +1,6 @@
 import controller.RacingController
 import view.UserInputView
+import view.RacingResultView
 
 fun main() {
 
@@ -7,6 +8,7 @@ fun main() {
     val carNames = inputView.readCarNames()
     val moveTryCount = inputView.readMoveTryCount()
 
-    val controller = RacingController()
+    val resultView = RacingResultView()
+    val controller = RacingController(resultView)
     controller.start(carNames, moveTryCount)
 }

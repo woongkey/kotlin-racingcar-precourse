@@ -9,4 +9,6 @@ class Car(val name: String) {
     fun move() {
         if (Random.nextInt(10) >= 4) position++
     }
+
+    fun getProgress(): String = "-".repeat(position)
 }

@@ -16,5 +16,7 @@ class RacingController(
             race.runOnce()
             resultView.printRound(race.cars)
         }
+
+        resultView.printWinners(race.getWinners())
     }
 }

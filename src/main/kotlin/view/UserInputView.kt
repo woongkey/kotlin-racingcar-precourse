@@ -17,4 +17,18 @@ class UserInputView {
             }
         }
     }
+
+    fun readMoveTryCount(): Int {
+        while (true) {
+            println("시도할 회수는 몇회인가요?")
+            val input = readLine()
+            try {
+                val number = input?.toIntOrNull() ?: throw IllegalArgumentException("[ERROR] 숫자를 입력해주세요.")
+                if (number <= 0) throw IllegalArgumentException("[ERROR] 1 이상의 숫자를 입력해주세요.")
+                return number
+            } catch (e: IllegalArgumentException) {
+                println(e.message)
+            }
+        }
+    }
 }
